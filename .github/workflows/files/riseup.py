@@ -6,7 +6,7 @@ def main():
     '''
     '''
     context = json.loads(os.getenv("GITHUB_CONTEXT"))
-    service = context.get('repository')
+    service = context.get('repository').get('event').get('repository').get('name')
     reviewer_name = context['event']
     description = context['event']
     link_to_PR = context.get('html_url')
