@@ -10,7 +10,7 @@ def main():
     # DESCRIPTION = os.environ.get('DESCRIPTION')
     LINK_TO_PR = os.environ.get('LINK_TO_PR')
     # ACTOR = os.environ.get('ACTOR')
-    EVENT= json.loads(os.environ.get('EVENT'))
+    EVENT=os.environ.get('EVENT')
     # get the name of the repo from the event
     # get the commit message from the event
     print(EVENT)
