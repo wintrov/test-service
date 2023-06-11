@@ -22,4 +22,3 @@ jobs:
           DESCRIPTION: ${{ github.event.client_payload.description }}
           LINK_TO_PR: ${{ github.event.client_payload.link_to_pr }}
           ACTOR: ${{ github.actor }}
-          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
