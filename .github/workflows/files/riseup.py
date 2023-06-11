@@ -10,7 +10,7 @@ def main():
     DESCRIPTION = os.environ.get('DESCRIPTION')
     LINK_TO_PR = os.environ.get('LINK_TO_PR')
     # get the name of the repo from the event
-    msg = f"Deploying {SERVICE} reviewed by {REVIEWER_NAME} - {DESCRIPTION} {LINK_TO_PR}"
+    msg = f"Deploying {SERVICE} reviewed by {REVIEWER_NAME} - {DESCRIPTION} [{LINK_TO_PR}]"
     print(msg)
     # res = requests.post("https://hooks.slack.com/services/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", data = json.dumps({"text": msg}))
     # print(res)
