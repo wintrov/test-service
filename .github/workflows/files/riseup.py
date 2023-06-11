@@ -5,10 +5,11 @@ import os
 def main():
     '''
     '''
-    service = os.environ['SERVICE']
-    reviewer_name = os.environ['REVIEWER_NAME']
-    description = os.environ['DESCRIPTION']
-    link_to_PR = os.environ['LINK_TO_PR']
+    context = json.loads(os.getenv("GITHUB_CONTEXT"))
+    service = context.get['event']['repository']['name', "unknown"]
+    reviewer_name = context['event'].get('reviewer', "unknown")
+    description = context['event'].get('description', "unknown")
+    link_to_PR = context['event']['repository']['html_url']
     # get the name of the repo from the event
     msg = f"Deploying ${service} reviewed by ${reviewer_name} - ${description} ${link_to_PR}"
     print(msg)

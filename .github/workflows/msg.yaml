@@ -9,17 +9,10 @@ jobs:
     name: This is from curl requests
     runs-on: ubuntu-latest
     env:
-      GITHUB_EVENT: ${{ toJson(github.event) }}
-      GITHUB_REPOSITORY: ${{ github.repository }}
+      GITHUB_CONTEXT: ${{ toJson(github) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Send slack message
         run: |
           python3 $GITHUB_WORKSPACE/.github/workflows/files/riseup.py
-        env:
-          # get the name of the repo
-          SERVICE: ${{ github.repository.full_name }}
-          REVIEWER_NAME: ${{ github.event.client_payload.reviewer_name }}
-          DESCRIPTION: ${{ github.event.client_payload.description }}
-          LINK_TO_PR: ${{ github.event.client_payload.link_to_PR }}
