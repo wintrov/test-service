@@ -5,7 +5,7 @@ import os
 def main():
     '''
     '''
-    SERVICE = os.environ.get('SERVICE')
+    SERVICE = os.environ.get('REPO_NAME')
     REVIEWER_NAME = os.environ.get('REVIEWER_NAME')
     DESCRIPTION = os.environ.get('DESCRIPTION')
     LINK_TO_PR = os.environ.get('LINK_TO_PR')
